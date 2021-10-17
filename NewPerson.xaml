@@ -1,0 +1,83 @@
+﻿<Window x:Class="Real_Estate_Agency.NewPerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Real_Estate_Agency"
+        mc:Ignorable="d"
+        Title="NewPerson" Height="350" Width="400"
+        MaxHeight="350" MaxWidth="400"
+        MinHeight="350" MinWidth="400"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation ="CenterScreen"
+        Loaded="FormLoad">
+    <Window.Resources>
+        <Style x:Key="WindowStale">
+            <Setter Property="Control.FontFamily" Value="Roboto Black"/>
+            <Setter Property="Control.Margin" Value="10"/>
+            <Setter Property="Control.FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="Label" BasedOn="{StaticResource WindowStale}">
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource WindowStale}">
+
+        </Style>
+        <Style TargetType="Button" BasedOn="{StaticResource WindowStale}">
+            <Setter Property="MaxHeight" Value="50"/>
+            <Setter Property="MinHeight" Value="25"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#0091EA"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment ="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="#04A0FF"/>
+
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="#0081D1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="First name*"></Label>
+        <Label Grid.Row="1" Content="Middle name*"></Label>
+        <Label Grid.Row="2" Content="Last name*"></Label>
+        <Label x:Name="PhoneLable" Grid.Row="3" Content="Phone"></Label>
+        <Label x:Name="DealShareLable" Grid.Row="3" Content="Deal share*"></Label>
+        <Label x:Name="EmailLable" Grid.Row="4" Content="Email"></Label>
+
+        <TextBox x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="0"></TextBox>
+        <TextBox x:Name="MiddleNameTextBox" Grid.Column="1" Grid.Row="1"></TextBox>
+        <TextBox x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="2"></TextBox>
+        <TextBox x:Name="PhoneTextBox" Grid.Column="1" Grid.Row="3"></TextBox>
+        <TextBox x:Name="DealShereTextBox" Grid.Column="1" Grid.Row="3"></TextBox>
+        <TextBox x:Name="EmailTextBox" Grid.Column="1" Grid.Row="4"></TextBox>
+
+        <Button Grid.Column="0" Grid.Row="5" Content="Save" Click="Button_Click"></Button>
+        <Button Grid.Column="2" Grid.Row="5" Content="Back" Click="Button_Click_1"></Button>
+
+    </Grid>
+</Window>
