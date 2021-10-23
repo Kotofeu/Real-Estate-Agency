@@ -23,6 +23,7 @@ namespace Real_Estate_Agency
         static string ChoseString;
         public object Form { get; private set; }
 
+
         public MainWindow()
         {
             InitializeComponent();
